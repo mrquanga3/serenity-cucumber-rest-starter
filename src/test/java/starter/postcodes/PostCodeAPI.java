@@ -13,6 +13,7 @@ public class PostCodeAPI {
         SerenityRest.given()
                 .pathParam("postcode", postcode)
                 .pathParam("country", country)
-                .get(LOCATION_BY_POST_CODE_AND_COUNTRY);
+                .log().all()
+                .get(LOCATION_BY_POST_CODE_AND_COUNTRY).then().log().all();
     }
 }
